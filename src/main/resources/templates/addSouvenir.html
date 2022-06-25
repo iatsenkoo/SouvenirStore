@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add souvenir</title>
+</head>
+<body>
+<h1 th:inline="text">Adding souvenir for factory: [[${factory.name}]]</h1>
+
+<form action="#" th:action="@{/saveSouvenir/{id}(id=${factory.id})}" th:object="${factory}" method="post">
+    <label for="nameSouvenir">Souvenir name</label>
+    <input id="nameSouvenir" type="text" name="nameSouvenir">
+    <label for="priceSouvenir">Souvenir price</label>
+    <input id="priceSouvenir" type="number" step="any"name="priceSouvenir">
+    <label for="dateProduct">Production date</label>
+    <input id="dateProduct" type="text" name="dateProduct">
+     <input type="submit" value="Save souvenir">
+</form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Factory</title>
+</head>
+<body>
+<form action="#" th:action="@{/updateFactory/{id}(id=${factory.id})}" th:object="${factory}" method="post">
+    <label for="name">Factory name </label>
+    <input type="text" th:field="*{name}" id="name">
+    <label for="country">Factory country </label>
+    <input type="text" th:field="*{country}" id="country">
+    <input type="submit" value="Update Factory">
+</form>
+</body>
+</html>

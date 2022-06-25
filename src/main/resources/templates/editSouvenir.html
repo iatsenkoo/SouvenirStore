@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Souvenir</title>
+</head>
+<body>
+<form action="#" th:action="@{/updateSouvenir/{id}(id=${souvenir.id})}" th:object="${souvenir}" method="post">
+    <label for="name">Souvenir name </label>
+    <input type="text" th:field="*{name}" id="name">
+    <label for="price">Souvenir price</label>
+    <input type="text" th:field="*{price}" id="price">
+    <label for="productDate">Production date</label>
+    <input type="text" th:field="*{productDate}" id="productDate">
+    <label for="factoryId">Factory id</label>
+    <input type="text" th:field="*{factory.id}" id="factoryId">
+
+    <input type="submit" value="Update Souvenir">
+</form>
+</body>
+</html>

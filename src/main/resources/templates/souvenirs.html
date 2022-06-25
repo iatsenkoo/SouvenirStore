@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List souvenirs</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>List souvenirs</h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Souvenir name</th>
+            <th>Souvenir price</th>
+            <th>Production date</th>
+            <th>Factory name</th>
+            <th>delete</th>
+            <th>edit</th>
+        </tr>
+        <tr th:each="souvenir : ${souvenirs}">
+            <td th:text="${souvenir.id}"></td>
+            <td th:text="${souvenir.name}"></td>
+            <td th:text="${souvenir.price}"></td>
+            <td th:text="${souvenir.productDate}"></td>
+            <td th:text="${souvenir.factory.name}"></td>
+            <td><a th:href="@{/deleteSouvenir/{id}(id=${souvenir.id})}">delete</a></td>
+            <td><a th:href="@{/editSouvenir/{id}(id=${souvenir.id})}">edit</a></td>
+        </tr>
+    </table>
+</body>
+</html>
